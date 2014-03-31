@@ -1,6 +1,7 @@
-
-<html>
-<head>
+---
+layout: default
+title: Incomming Call - April Fool
+---
 <script type="text/javascript">
 //<![CDATA[
 try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok9v=02fcfa4f56/"},atok:"cb373aa692af3b4dc09be9461a8f5536",petok:"09375119af16be10bf1f5b45a6fe52e223a14423-1396281303-3600",zone:"shkspr.mobi",rocket:"0",apps:{"the_day_we_fight_back":{"callOnly":"false"}}}];var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok9v=b064e16429/cloudflare.min.js";b.parentNode.insertBefore(a,b);}}catch(e){};
@@ -19,19 +20,17 @@ try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag
 	navigator.vibrate([1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000, 500]);
 	</script>
 <img width="100%" src="phone-top.png"/>
-<img width="100%" src="phone-bottom.png" onclick="window.location.href='tel:15541110411';"/>
+<img width="100%" src="phone-bottom.png" onclick="window.location.href='tel:+8615541110411';"/>
 <audio autoplay="autoplay">
 <source src="ring.mp3"/>
 </audio>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-      <div id="btns">
-	<div class="btn-group">
-	  <a href="/blog" class="btn btn-default">Blog</a>
-	  <a href="/cv.pdf" class="btn btn-default">CV</a>
-	  <a href="/agenda.html" class="btn btn-default">Agenda</a>
-	  <a href="/contact.html" class="btn btn-default">Contact</a>
-	</div>
-      </div>
+<div style="margin:20px auto">
+  <div class="btn-group">
+    <a href="/blog" class="btn btn-default">Blog</a>
+    <a href="/cv.pdf" class="btn btn-default">CV</a>
+    <a href="/agenda.html" class="btn btn-default">Agenda</a>
+    <a href="/contact.html" class="btn btn-default">Contact</a>
+  </div>
+</div>
 </body>
 </html>
