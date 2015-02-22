@@ -1,5 +1,18 @@
 'use strict';
-
+var myfn = {}; var curImg; var myDone = function() {
+    setInterval(function() {
+        $('#main').addClass('zen-mode');
+        myfn.close();
+    }, 30);
+    $('.depthy-viewer').css({
+        "background": "url(samples/" + curImg + "-blur.jpg)",
+        "background-size": "100%",
+        "background-position": "50%"
+    });
+    setTimeout(function() {
+        parent.done();
+    }, 500);
+};
 angular.module('depthyApp', [
   'ngAnimate',
   'ngTouch',
@@ -33,7 +46,8 @@ angular.module('depthyApp', [
       if (!$state.current.name) {
         // first timer
         depthy.leftpaneOpen();
-        depthy.loadSampleImage('flowers');
+        curImg = 'p1';
+        depthy.loadSampleImage('p1');
       }
     }]
   })
@@ -653,11 +667,8 @@ angular.module('depthyApp').provider('depthy', function depthy() {
       gallery: [],
 
       samples: [
-        { id: 'flowers', title: 'Flowers'},
-        { id: 'hut', title: 'Hut'},
-        { id: 'shelf', title: 'Shelf'},
-        { id: 'mango', title: 'Mango'},
-        { id: 'tunnel', title: 'Tunnel'},
+        { id: 'p1', title: 'p1'},
+        { id: 'p2', title: 'p2'},
       ],
 
       stores: {
@@ -1174,6 +1185,9 @@ angular.module('depthyApp').provider('depthy', function depthy() {
 
     };
 
+    myfn.close = function() {
+      depthy.leftpaneClose();
+    };
 
     initialize();
 
@@ -4159,20 +4173,15 @@ Copyright (c) 2014 Rafał Lindemann. http://panrafal.github.com/depthy
       if (q !== quality.current) {
         if (q > quality.current && quality.provenSlow[q] && stageSize.width * stageSize.height >= quality.provenSlow[q]) {
           console.warn('Quality %d proven to be slow for size %d >= %d at %d', q, stageSize.width * stageSize.height, quality.provenSlow[q], quality.avg);
+            myDone();
         } else {
           console.warn('Quality change %d -> %d at %d fps', quality.current, q, quality.avg);
           quality.current = q;
           stageDirty = true;
         }
       } else {
-        console.warn('Quality %d is ok at %d fps', q, quality.avg); 
-          (function() {
-              setInterval(function() {
-                  $('#main').addClass('zen-mode');
-              }, 100);
-              //$('#main').addClass('hidden');
-              parent.done();
-          })();
+        console.warn('Quality %d is ok at %d fps', q, quality.avg);
+          myDone();
       }
       updateDebug();
     }

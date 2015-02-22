@@ -23,7 +23,14 @@
       onready = function(fn) {
         for(var x in readyFn) {
           if(typeof readyFn[x] === 'function') {
-            readyFn[x]();
+            if(readyFn[x]() === 0) {
+              setTimeout((function(fn) {
+                return function() {
+                  onready(fn);
+                };
+              })(fn), 100);
+              return;
+            }
           }
         }
         fn();
