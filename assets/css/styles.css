@@ -85,17 +85,18 @@
     box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
 }
 
-.nav>li {
+.homepage-menu .nav {
     float: right;
 }
 
-.nav>li>a {
+.homepage-menu .nav>li>a {
     color: rgba(0, 0, 0, 0.6);
     text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.1);
     font-weight: 800;
+    border-radius: 0;
 }
 
-.nav>li>a:hover {
+.homepage-menu .nav>li>a:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
 

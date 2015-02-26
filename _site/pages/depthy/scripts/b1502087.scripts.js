@@ -6,8 +6,8 @@ var myfn = {}; var curImg; var myDone = function() {
     }, 30);
     $('.depthy-viewer').css({
         "background": "url(samples/" + curImg + "-blur.jpg)",
-        "background-size": "100%",
-        "background-position": "50%"
+        "background-size": "cover",
+        "background-position": "50% 50%"
     });
     setTimeout(function() {
         parent.done();

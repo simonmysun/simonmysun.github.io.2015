@@ -1,0 +1,8 @@
+baseurl:          
+
+markdown:         kramdown
+highlighter:      pygments
+paginate:         4
+
+title:            MY Sun
+description:      "MY Sun's homepage"
