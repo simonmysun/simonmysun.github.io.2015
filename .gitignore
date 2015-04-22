@@ -31,4 +31,9 @@
 *.xdy
 *.tdo
 
+
+_site/
+.sass-cache/
+
+*.*~
 *~
