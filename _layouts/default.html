@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+    <script>
+      if (window.location.protocol != "https:") window.location.protocol = "https";
+    </script>
     {% include loader.style.html %}
     <!-- Bootstrap -->
     <link href="{{ site.baseurl }}/assets/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">

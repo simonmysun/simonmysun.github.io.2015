@@ -10,4 +10,5 @@ window.onload = function() {
     $("#loading").fadeOut(2000,function(){
 	console.log("finished");
     })
+    onready();
 }

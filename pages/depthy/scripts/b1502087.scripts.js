@@ -60,11 +60,11 @@ angular.module('depthyApp', [
   .state('imgur', {
     url: '/ip/:id',
     controller: ['$stateParams', '$state', 'depthy', function ($stateParams, $state, depthy) {
-      depthy.loadUrlDirectImage('http://i.imgur.com/' + $stateParams.id + '.png', true, {
+      depthy.loadUrlDirectImage('https://i.imgur.com/' + $stateParams.id + '.png', true, {
         state: 'imgur',
         stateParams: {id: $stateParams.id},
-        thumb: 'http://i.imgur.com/' + $stateParams.id + 's.jpg',
-        storeUrl: 'http://imgur.com/' + $stateParams.id,
+        thumb: 'https://i.imgur.com/' + $stateParams.id + 's.jpg',
+        storeUrl: 'https://imgur.com/' + $stateParams.id,
         store: depthy.stores.imgur
       });
     }]
@@ -72,11 +72,11 @@ angular.module('depthyApp', [
   .state('imgur2', {
     url: '/ii/:id',
     controller: ['$stateParams', 'depthy', function ($stateParams, depthy) {
-      depthy.loadUrlImage('http://i.imgur.com/' + $stateParams.id + '.png', {
+      depthy.loadUrlImage('https://i.imgur.com/' + $stateParams.id + '.png', {
         state: 'imgur2',
         stateParams: {id: $stateParams.id},
-        thumb: 'http://i.imgur.com/' + $stateParams.id + 'm.jpg',
-        storeUrl: 'http://imgur.com/' + $stateParams.id,
+        thumb: 'https://i.imgur.com/' + $stateParams.id + 'm.jpg',
+        storeUrl: 'https://imgur.com/' + $stateParams.id,
         store: depthy.stores.imgur
       });
     }]
@@ -643,9 +643,9 @@ angular.module('depthyApp').provider('depthy', function depthy() {
 
       imgurId: 'b4ca5b16efb904b',
 
-      rootShareUrl: 'http://depthy.me/',
+      rootShareUrl: 'https://depthy.me/',
       share: {
-        url: 'http://depthy.me/',
+        url: 'https://depthy.me/',
       },
 
       // true - opened fully, 'gallery' opened on gallery
@@ -1818,7 +1818,7 @@ Angular ShareUrls
 
 Based on https://github.com/bradvin/social-share-urls
 
-Copyright 2014 Rafał Lindemann http://github.com/panrafal
+Copyright 2014 Rafał Lindemann https://github.com/panrafal
 */
 angular.module('shareUrls', [])
 .provider('ShareUrls', function () {
@@ -1827,7 +1827,7 @@ angular.module('shareUrls', [])
   var provider = this,
     templates = {
     facebook: {
-      url: 'http://www.facebook.com/sharer.php?s=100&p[url]={url}&p[images][0]={img}&p[title]={title}&p[summary]={desc}'
+      url: 'https://www.facebook.com/sharer.php?s=100&p[url]={url}&p[images][0]={img}&p[title]={title}&p[summary]={desc}'
     },
     'facebook-feed': {
       url: 'https://www.facebook.com/dialog/feed?app_id={app_id}&link={url}&picture={img}&name={title}&description={desc}&redirect_uri={redirect_url}'
@@ -1849,22 +1849,22 @@ angular.module('shareUrls', [])
       url: 'https://pinterest.com/pin/create/bookmarklet/?media={img}&url={url}&is_video={is_video}&description={title}',
     },
     linkedin: {
-      url: 'http://www.linkedin.com/shareArticle?url={url}&title={title}',
+      url: 'https://www.linkedin.com/shareArticle?url={url}&title={title}',
     },
     buffer: {
-      url: 'http://bufferapp.com/add?text={title}&url={url}',
+      url: 'https://bufferapp.com/add?text={title}&url={url}',
     },
     digg: {
-      url: 'http://digg.com/submit?url={url}&title={title}',
+      url: 'https://digg.com/submit?url={url}&title={title}',
     },
     tumblr: {
-      url: 'http://www.tumblr.com/share/link?url={url}&name={title}&description={desc}',
+      url: 'https://www.tumblr.com/share/link?url={url}&name={title}&description={desc}',
     },
     reddit: {
-      url: 'http://reddit.com/submit?url={url}&title={title}',
+      url: 'https://reddit.com/submit?url={url}&title={title}',
     },
     stumbleupon: {
-      url: 'http://www.stumbleupon.com/submit?url={url}&title={title}',
+      url: 'https://www.stumbleupon.com/submit?url={url}&title={title}',
     },
     delicious: {
       url: 'https://delicious.com/save?v=5&provider={provider}&noui&jump=close&url={url}&title={title}',
@@ -2235,7 +2235,7 @@ angular.module('depthyApp')
 });
 
 /**
- * @author Mat Groves http://matgroves.com/ @Doormat23
+ * @author Mat Groves https://matgroves.com/ @Doormat23
  */
 
 /**
@@ -2459,7 +2459,7 @@ Object.defineProperty(PIXI.DepthDisplacementFilter.prototype, 'offset', {
   ---------------
   The MIT License
 
-  Copyright (c) 2014 Rafał Lindemann. http://panrafal.github.com/depthy
+  Copyright (c) 2014 Rafał Lindemann. https://panrafal.github.com/depthy
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -2513,7 +2513,7 @@ PIXI.DepthPerspectiveFilter = function(texture, quality)
   this.fragmentSrc = [
 
 
-'// Copyright (c) 2014 Rafał Lindemann. http://panrafal.github.com/depthy',
+'// Copyright (c) 2014 Rafał Lindemann. https://panrafal.github.com/depthy',
 'precision mediump float;',
 '',
 'varying vec2 vTextureCoord;',
@@ -2967,12 +2967,12 @@ angular.module('depthyApp').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('views/export-anaglyph-modal.html',
-    "<div class=modal-header><h4 class=modal-title ng-click=$dismiss()><i class=\"icon icon-back\"></i>Put your glasses on</h4></div><div class=modal-body><div class=text-center><div class=\"thumbnail thumbnail-lg\" ng-class=\"{loading: loading}\"><a image-source=export-anaglyph-modal target=_blank download=\"{{depthy.opened.getFilename() + '-anaglyph.jpg'}}\"><img image-source=\"export-anaglyph-modal\"></a></div></div><p class=\"text-muted text-center\">{{depthy.downloadInstructions}} to save it.</p><div class=\"alert alert-info alert-icon margin-top-xl\"><i class=\"icon icon-eye\"></i> You'll need <a href=http://en.wikipedia.org/wiki/Anaglyph_3D target=_blank>red/cyan 3D glasses</a> to view this image properly.<br></div><div class=\"alert alert-info alert-icon\"><i class=\"icon icon-info\"></i> You can tweek the result by changing the effect's strength and focus point in options.<br></div></div><div class=modal-footer><button class=\"btn btn-default\" ng-click=$dismiss()>Close</button></div>"
+    "<div class=modal-header><h4 class=modal-title ng-click=$dismiss()><i class=\"icon icon-back\"></i>Put your glasses on</h4></div><div class=modal-body><div class=text-center><div class=\"thumbnail thumbnail-lg\" ng-class=\"{loading: loading}\"><a image-source=export-anaglyph-modal target=_blank download=\"{{depthy.opened.getFilename() + '-anaglyph.jpg'}}\"><img image-source=\"export-anaglyph-modal\"></a></div></div><p class=\"text-muted text-center\">{{depthy.downloadInstructions}} to save it.</p><div class=\"alert alert-info alert-icon margin-top-xl\"><i class=\"icon icon-eye\"></i> You'll need <a href=https://en.wikipedia.org/wiki/Anaglyph_3D target=_blank>red/cyan 3D glasses</a> to view this image properly.<br></div><div class=\"alert alert-info alert-icon\"><i class=\"icon icon-info\"></i> You can tweek the result by changing the effect's strength and focus point in options.<br></div></div><div class=modal-footer><button class=\"btn btn-default\" ng-click=$dismiss()>Close</button></div>"
   );
 
 
   $templateCache.put('views/export-gif-modal.html',
-    "<div class=modal-header><h4 class=modal-title ng-click=$dismiss()><i class=\"icon icon-back\"></i> {{imageReady ? 'Your GIF is ready to take!' : 'Please wait...'}}</h4></div><div class=modal-body><div class=\"export-progress margin-xl anim-expand long\" ng-hide=imageReady><div class=\"progress progress-md progress-striped active\"><div class=progress-bar role=progressbar ng-style=\"{width: exportProgress * 100 + '%'}\"></div></div><div class=\"alert alert-warning alert-icon\" ng-if=\"Modernizr.mobile ? (depthy.exportSize > 150 || viewer.animateDuration > 1) : (depthy.exportSize > 300 || viewer.animateDuration > 2)\"><i class=\"icon icon-stopwatch\"></i> Generating GIFs is a tedious task. If it takes too long, choose a smaller size or make it shorter...</div></div><div class=\"text-center export-image anim-expand verylong ng-hide\" ng-show=imageReady><div class=\"thumbnail center-block\"><a image-source=export-gif target=_blank download=\"{{depthy.opened.getFilename() + '.gif'}}\"><img image-source=\"export-gif\"></a><h5>{{imageSize / 1024 | number: 0}}KB</h5></div><p class=text-muted>{{depthy.downloadInstructions}} to save it.</p><div class=\"alert alert-warning alert-icon text-left\" ng-if=\"Modernizr.android && Modernizr.chrome && !Modernizr.adownload && imageSize > 1000000\"><i class=\"icon icon-warning\"></i> Due to the bug in Chrome the option to save the GIF can be unavailable. You'll have to make it smaller or share it.</div><div class=\"alert alert-warning alert-icon text-left\" ng-if=imageOverLimit><i class=\"icon icon-meter\"></i> It's <b>too big</b> too share! You'll have to share it on your own, or make it smaller...</div><div class=margin-top-lg ng-if=!imageOverLimit><div ng-switch=shareUrl class=export-share><div class=\"anim-expand long\" ng-switch-when=\"\"><button class=\"btn btn-success btn-lg col-sm-6 col-xs-8 center-block margin-bottom-lg\" ng-click=share()><i class=\"icon icon-upload\"></i>Share it!</button><div class=\"alert alert-danger alert-icon text-left anim-expand\" ng-if=shareError><i class=\"icon icon-error\"></i> {{shareError}}</div><div class=\"alert alert-info alert-icon text-left\" class=anim-expand><i class=\"icon icon-cloud\"></i> Your GIF will be uploaded to <a href=http://imgur.com target=_blank>Imgur.com</a>.<br>It will remain relatively private until you share it too much and it goes viral.</div></div><div class=\"margin-xl anim-expand\" ng-switch-when=sharing><div class=\"progress progress-md progress-striped active\"><div class=progress-bar role=progressbar ng-style=\"{width: shareProgress * 100 + '%'}\"></div></div><p class=text-muted>Uploading, please wait...</p></div><div class=anim-expand ng-switch-default><div class=\"alert alert-success alert-lg alert-icon\"><i class=\"icon icon-link\"></i> <a href={{shareUrl}} target=_blank>{{shareUrl}}</a></div><div class=\"btn-group btn-group-shares margin-lg\"><div class=\"btn btn-icon btn-twitter\" share-popup=twitter share-options=share ga=\"['send', 'event', 'png', 'share', 'twitter']\"><i class=\"icon icon-lg icon-twitter\"></i></div><div class=\"btn btn-icon btn-facebook\" share-popup=facebook share-options=share ga=\"['send', 'event', 'png', 'share', 'facebook']\"><i class=\"icon icon-lg icon-facebook\"></i></div><div class=\"btn btn-icon btn-google\" share-popup=google share-options=share ga=\"['send', 'event', 'png', 'share', 'google']\"><i class=\"icon icon-lg icon-googleplus\"></i></div></div></div></div></div><div class=\"alert alert-info alert-icon text-left\"><i class=\"icon icon-heart\"></i> Want some good karma? Use <b class=text-success>#depthy</b> in your shares, thanks!</div></div></div><div class=modal-footer><button class=\"btn btn-default\" ng-click=$dismiss()>Close</button></div>"
+    "<div class=modal-header><h4 class=modal-title ng-click=$dismiss()><i class=\"icon icon-back\"></i> {{imageReady ? 'Your GIF is ready to take!' : 'Please wait...'}}</h4></div><div class=modal-body><div class=\"export-progress margin-xl anim-expand long\" ng-hide=imageReady><div class=\"progress progress-md progress-striped active\"><div class=progress-bar role=progressbar ng-style=\"{width: exportProgress * 100 + '%'}\"></div></div><div class=\"alert alert-warning alert-icon\" ng-if=\"Modernizr.mobile ? (depthy.exportSize > 150 || viewer.animateDuration > 1) : (depthy.exportSize > 300 || viewer.animateDuration > 2)\"><i class=\"icon icon-stopwatch\"></i> Generating GIFs is a tedious task. If it takes too long, choose a smaller size or make it shorter...</div></div><div class=\"text-center export-image anim-expand verylong ng-hide\" ng-show=imageReady><div class=\"thumbnail center-block\"><a image-source=export-gif target=_blank download=\"{{depthy.opened.getFilename() + '.gif'}}\"><img image-source=\"export-gif\"></a><h5>{{imageSize / 1024 | number: 0}}KB</h5></div><p class=text-muted>{{depthy.downloadInstructions}} to save it.</p><div class=\"alert alert-warning alert-icon text-left\" ng-if=\"Modernizr.android && Modernizr.chrome && !Modernizr.adownload && imageSize > 1000000\"><i class=\"icon icon-warning\"></i> Due to the bug in Chrome the option to save the GIF can be unavailable. You'll have to make it smaller or share it.</div><div class=\"alert alert-warning alert-icon text-left\" ng-if=imageOverLimit><i class=\"icon icon-meter\"></i> It's <b>too big</b> too share! You'll have to share it on your own, or make it smaller...</div><div class=margin-top-lg ng-if=!imageOverLimit><div ng-switch=shareUrl class=export-share><div class=\"anim-expand long\" ng-switch-when=\"\"><button class=\"btn btn-success btn-lg col-sm-6 col-xs-8 center-block margin-bottom-lg\" ng-click=share()><i class=\"icon icon-upload\"></i>Share it!</button><div class=\"alert alert-danger alert-icon text-left anim-expand\" ng-if=shareError><i class=\"icon icon-error\"></i> {{shareError}}</div><div class=\"alert alert-info alert-icon text-left\" class=anim-expand><i class=\"icon icon-cloud\"></i> Your GIF will be uploaded to <a href=https://imgur.com target=_blank>Imgur.com</a>.<br>It will remain relatively private until you share it too much and it goes viral.</div></div><div class=\"margin-xl anim-expand\" ng-switch-when=sharing><div class=\"progress progress-md progress-striped active\"><div class=progress-bar role=progressbar ng-style=\"{width: shareProgress * 100 + '%'}\"></div></div><p class=text-muted>Uploading, please wait...</p></div><div class=anim-expand ng-switch-default><div class=\"alert alert-success alert-lg alert-icon\"><i class=\"icon icon-link\"></i> <a href={{shareUrl}} target=_blank>{{shareUrl}}</a></div><div class=\"btn-group btn-group-shares margin-lg\"><div class=\"btn btn-icon btn-twitter\" share-popup=twitter share-options=share ga=\"['send', 'event', 'png', 'share', 'twitter']\"><i class=\"icon icon-lg icon-twitter\"></i></div><div class=\"btn btn-icon btn-facebook\" share-popup=facebook share-options=share ga=\"['send', 'event', 'png', 'share', 'facebook']\"><i class=\"icon icon-lg icon-facebook\"></i></div><div class=\"btn btn-icon btn-google\" share-popup=google share-options=share ga=\"['send', 'event', 'png', 'share', 'google']\"><i class=\"icon icon-lg icon-googleplus\"></i></div></div></div></div></div><div class=\"alert alert-info alert-icon text-left\"><i class=\"icon icon-heart\"></i> Want some good karma? Use <b class=text-success>#depthy</b> in your shares, thanks!</div></div></div><div class=modal-footer><button class=\"btn btn-default\" ng-click=$dismiss()>Close</button></div>"
   );
 
 
@@ -2996,7 +2996,7 @@ angular.module('depthyApp').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('views/export-webm-modal.html',
-    "<div class=modal-header><h4 class=modal-title ng-click=$dismiss()><i class=\"icon icon-back\"></i> {{ready ? 'Your Video is ready to take!' : 'Please wait...'}}</h4></div><div class=modal-body><div class=\"export-progress margin-xl anim-expand long\" ng-hide=ready><div class=\"progress progress-md progress-striped active\"><div class=progress-bar role=progressbar ng-style=\"{width: (exportProgress) * 100 + '%'}\"></div></div><div class=\"alert alert-warning alert-icon\" ng-if=Modernizr.mobile><i class=\"icon icon-stopwatch\"></i> Generating videos on a mobile is a tedious task. If it takes too long, choose a smaller size or make it shorter...</div></div><div class=\"text-center export-image anim-expand verylong ng-hide\" ng-show=ready><div class=\"thumbnail center-block\"><video src={{videoUrl}} loop autoplay controls></video><h5>{{size / 1024 | number: 0}}KB</h5></div><div class=margin><a class=\"btn btn-success margin\" ng-href={{videoUrl}} target=_blank download=\"{{depthy.opened.getFilename() + '.webm'}}\"><i class=\"icon icon-download\"></i>Save this video</a></div><div class=\"alert alert-info alert-icon text-left\"><i class=\"icon icon-info\"></i> You can upload this video to <a href=\"http://gfycat.com/\" target=_blank>gfycat</a>, or edit it in any program supporting WebM format.</div><div class=\"alert alert-info alert-icon text-left\"><i class=\"icon icon-heart\"></i> Want some good karma? Use <b class=text-success>#depthy</b> if you share it, thanks!</div></div></div><div class=modal-footer><button class=\"btn btn-default\" ng-click=$dismiss()>Close</button></div>"
+    "<div class=modal-header><h4 class=modal-title ng-click=$dismiss()><i class=\"icon icon-back\"></i> {{ready ? 'Your Video is ready to take!' : 'Please wait...'}}</h4></div><div class=modal-body><div class=\"export-progress margin-xl anim-expand long\" ng-hide=ready><div class=\"progress progress-md progress-striped active\"><div class=progress-bar role=progressbar ng-style=\"{width: (exportProgress) * 100 + '%'}\"></div></div><div class=\"alert alert-warning alert-icon\" ng-if=Modernizr.mobile><i class=\"icon icon-stopwatch\"></i> Generating videos on a mobile is a tedious task. If it takes too long, choose a smaller size or make it shorter...</div></div><div class=\"text-center export-image anim-expand verylong ng-hide\" ng-show=ready><div class=\"thumbnail center-block\"><video src={{videoUrl}} loop autoplay controls></video><h5>{{size / 1024 | number: 0}}KB</h5></div><div class=margin><a class=\"btn btn-success margin\" ng-href={{videoUrl}} target=_blank download=\"{{depthy.opened.getFilename() + '.webm'}}\"><i class=\"icon icon-download\"></i>Save this video</a></div><div class=\"alert alert-info alert-icon text-left\"><i class=\"icon icon-info\"></i> You can upload this video to <a href=\"https://gfycat.com/\" target=_blank>gfycat</a>, or edit it in any program supporting WebM format.</div><div class=\"alert alert-info alert-icon text-left\"><i class=\"icon icon-heart\"></i> Want some good karma? Use <b class=text-success>#depthy</b> if you share it, thanks!</div></div></div><div class=modal-footer><button class=\"btn btn-default\" ng-click=$dismiss()>Close</button></div>"
   );
 
 
@@ -3028,7 +3028,7 @@ angular.module('depthyApp').run(['$templateCache', function($templateCache) {
     "    'draw-mode': depthy.drawMode,\n" +
     "    'offline': depthy.isOffline(),\n" +
     "    'depthy-ready': depthy.isReady(),\n" +
-    "    'depthy-loading': depthy.isLoading()}\"><div id=hamburger class=\"icon icon-navicon-bold\" ng-click=depthy.leftpaneToggle()></div><nav id=navbar class=text-right><div class=btn-group><button class=\"btn btn-default btn-control\" ng-click=screenfull.toggle() ng-if=\"screenfull.enabled && !screenfull.isFullscreen\" title=Fullscreen ga><i class=\"icon icon-expand\"></i></button></div></nav><div id=leftpane ng-swipe-left=depthy.leftpaneClose()><div class=scroll><section id=about><header><div class=logo ng-include=\"'images/logo.svg'\" ng-click=depthy.leftpaneClose()></div><p class=lead>the third dimension viewer</p></header><article class=text-center><div class=\"button-open btn btn-lg btn-success center-block\" ng-click=selectFile($event)><i class=icon ng-class=\"depthy.isLoading() ? 'icon-loading' : 'icon-open'\"></i>Open photo</div></article></section><section class=\"alert alert-warning alert-icon anim-expand\" ng-if=depthy.isOffline()><i class=\"icon icon-powercord\"></i> You're working offline.<br>Some feature may not be available!</section><section class=\"alert alert-success alert-icon alert-button anim-expand\" ng-if=depthy.gotUpdate><i class=\"icon icon-loop\"></i><div class=\"btn btn-success btn-sm pull-right\" ng-click=depthy.reload()>Reload</div><div class=alert-body>There is a new version available!</div></section><section class=\"alert alert-success alert-icon alert-button anim-expand\" ng-if=depthy.newStuff.length><i class=\"icon icon-trophy\"></i><div class=\"btn btn-success btn-sm pull-right\" ng-click=depthy.hideNewStuff()>Got it!</div><div class=alert-body>New stuff in this version:<div ng-repeat=\"info in depthy.newStuff\">{{info}}</div></div></section><section id=gallery><ul><li ng-repeat=\"image in depthy.gallery\" ng-style=\"{'background-image':'url('+image.thumb+')'}\" ng-click=openImage(image) ng-class=\"'type-' + image.getType()\" ng-if=image.isAvailable()></li></ul></section><section class=text-center id=share><div class=\"btn-group btn-group-shares btn-group-justified\"><div class=\"btn btn-icon btn-twitter\" share-popup=twitter share-options=depthy.share ga=\"['send', 'event', 'depthy', 'share', 'twitter']\"><i class=\"icon icon-twitter\"></i></div><div class=\"btn btn-icon btn-facebook\" share-popup=facebook share-options=depthy.share ga=\"['send', 'event', 'depthy', 'share', 'facebook']\"><i class=\"icon icon-facebook\"></i></div><div class=\"btn btn-icon btn-google\" share-popup=google share-options=depthy.share ga=\"['send', 'event', 'depthy', 'share', 'google']\"><i class=\"icon icon-googleplus\"></i></div></div><div class=\"btn-group btn-group-shares btn-group-justified\"><div class=\"btn btn-sm btn-twitter\" share-popup=twitter-follow share-options=\"{name: 'staminapl'}\" ga=\"['send', 'event', 'depthy', 'follow', 'twitter']\"><i class=\"icon icon-twitter\"></i>Follow</div><a class=\"btn btn-sm btn-google\" href=https://plus.google.com/104689068982536734877 target=_blank ga=\"['send', 'event', 'depthy', 'follow', 'google']\"><i class=\"icon icon-googleplus\"></i>Follow</a></div></section><section id=footer>Depthy <span ng-click=debugClicked()>{{version}}</span> created by <a href=\"http://www.stamina.pl/\">Rafał Lindemann</a>.<br>Ideas? Issues? Code? It's open sourced on <a href=https://github.com/panrafal/depthy>GitHub</a>!</section></div></div><section id=viewer><div class=alerts><div class=\"panel panel-danger\" ng-include=\"!Modernizr.webgl ? 'views/alert-webgl.html' : null\"></div><div class=\"alert alert-info\" ng-if=\"depthy.isReady() && depthy.movearoundShow\" ng-click=\"depthy.movearoundShow = false\"><p>Move your {{Modernizr.devicemotion && Modernizr.mobile ? 'device' : 'cursor'}} around to see the effect</p></div><div class=\"panel panel-danger\" ng-include=\"(Modernizr.webgl && !depthy.isLoading() && !depthy.hasImage()) ? 'views/alert-noimage.html' : null\"></div><div class=\"panel panel-warning\" ng-include=\"(Modernizr.webgl && !depthy.isLoading() && depthy.hasImage() && !depthy.hasDepthmap()) ? 'views/alert-nodepth.html' : null\"></div></div><div class=depthy-viewer depthy-viewer=depthy.viewer ng-click=depthy.zenModeToggle() ng-swipe-right=depthy.leftpaneOpen()><canvas></canvas><div class=\"icon icon-loading\"></div></div><div class=buttons-options ng-show=!depthy.activePopup><div class=btn-group><button class=\"btn btn-default btn-control\" ng-click=shareOptions() ng-disabled=\"!depthy.hasCompleteImage() || !depthy.isReady()\" title=Share><i class=\"icon icon-share\"></i></button> <button class=\"btn btn-default btn-control\" ng-click=imageOptions() ng-disabled=\"!depthy.hasCompleteImage() || !depthy.isReady()\" title=Options ga><i class=\"icon icon-settings\"></i></button> <button class=\"btn btn-default btn-control\" ng-click=imageInfo() ng-disabled=\"!Modernizr.webgl || !depthy.hasImage() || depthy.isLoading()\" title=Info ga><i class=\"icon icon-image\"></i></button> <button class=\"btn btn-default btn-control\" ng-click=drawDepthmap() ng-disabled=\"!Modernizr.webgl || !depthy.hasImage() || depthy.isLoading()\" title=Paint ga><i class=\"icon icon-draw\"></i></button></div></div></section><span ng-include=\"depthy.drawMode ? 'views/draw.html' : null\"></span><section id=popup><div class=\"popup options-popup\" ng-show=\"depthy.activePopup.state === 'image.options'\" ng-include=\"'views/options-popup.html'\"></div><div class=\"popup export-popup\" ng-include=\"depthy.activePopup.state === 'export.gif.options' ? 'views/export-gif-popup.html' : null\"></div><div class=\"popup export-popup\" ng-include=\"depthy.activePopup.state === 'export.webm.options' ? 'views/export-webm-popup.html' : null\"></div><div class=\"popup share-popup\" ng-show=\"depthy.activePopup.state === 'share.options'\" ng-include=\"'views/share-popup.html'\"></div></section></div>"
+    "    'depthy-loading': depthy.isLoading()}\"><div id=hamburger class=\"icon icon-navicon-bold\" ng-click=depthy.leftpaneToggle()></div><nav id=navbar class=text-right><div class=btn-group><button class=\"btn btn-default btn-control\" ng-click=screenfull.toggle() ng-if=\"screenfull.enabled && !screenfull.isFullscreen\" title=Fullscreen ga><i class=\"icon icon-expand\"></i></button></div></nav><div id=leftpane ng-swipe-left=depthy.leftpaneClose()><div class=scroll><section id=about><header><div class=logo ng-include=\"'images/logo.svg'\" ng-click=depthy.leftpaneClose()></div><p class=lead>the third dimension viewer</p></header><article class=text-center><div class=\"button-open btn btn-lg btn-success center-block\" ng-click=selectFile($event)><i class=icon ng-class=\"depthy.isLoading() ? 'icon-loading' : 'icon-open'\"></i>Open photo</div></article></section><section class=\"alert alert-warning alert-icon anim-expand\" ng-if=depthy.isOffline()><i class=\"icon icon-powercord\"></i> You're working offline.<br>Some feature may not be available!</section><section class=\"alert alert-success alert-icon alert-button anim-expand\" ng-if=depthy.gotUpdate><i class=\"icon icon-loop\"></i><div class=\"btn btn-success btn-sm pull-right\" ng-click=depthy.reload()>Reload</div><div class=alert-body>There is a new version available!</div></section><section class=\"alert alert-success alert-icon alert-button anim-expand\" ng-if=depthy.newStuff.length><i class=\"icon icon-trophy\"></i><div class=\"btn btn-success btn-sm pull-right\" ng-click=depthy.hideNewStuff()>Got it!</div><div class=alert-body>New stuff in this version:<div ng-repeat=\"info in depthy.newStuff\">{{info}}</div></div></section><section id=gallery><ul><li ng-repeat=\"image in depthy.gallery\" ng-style=\"{'background-image':'url('+image.thumb+')'}\" ng-click=openImage(image) ng-class=\"'type-' + image.getType()\" ng-if=image.isAvailable()></li></ul></section><section class=text-center id=share><div class=\"btn-group btn-group-shares btn-group-justified\"><div class=\"btn btn-icon btn-twitter\" share-popup=twitter share-options=depthy.share ga=\"['send', 'event', 'depthy', 'share', 'twitter']\"><i class=\"icon icon-twitter\"></i></div><div class=\"btn btn-icon btn-facebook\" share-popup=facebook share-options=depthy.share ga=\"['send', 'event', 'depthy', 'share', 'facebook']\"><i class=\"icon icon-facebook\"></i></div><div class=\"btn btn-icon btn-google\" share-popup=google share-options=depthy.share ga=\"['send', 'event', 'depthy', 'share', 'google']\"><i class=\"icon icon-googleplus\"></i></div></div><div class=\"btn-group btn-group-shares btn-group-justified\"><div class=\"btn btn-sm btn-twitter\" share-popup=twitter-follow share-options=\"{name: 'staminapl'}\" ga=\"['send', 'event', 'depthy', 'follow', 'twitter']\"><i class=\"icon icon-twitter\"></i>Follow</div><a class=\"btn btn-sm btn-google\" href=https://plus.google.com/104689068982536734877 target=_blank ga=\"['send', 'event', 'depthy', 'follow', 'google']\"><i class=\"icon icon-googleplus\"></i>Follow</a></div></section><section id=footer>Depthy <span ng-click=debugClicked()>{{version}}</span> created by <a href=\"https://www.stamina.pl/\">Rafał Lindemann</a>.<br>Ideas? Issues? Code? It's open sourced on <a href=https://github.com/panrafal/depthy>GitHub</a>!</section></div></div><section id=viewer><div class=alerts><div class=\"panel panel-danger\" ng-include=\"!Modernizr.webgl ? 'views/alert-webgl.html' : null\"></div><div class=\"alert alert-info\" ng-if=\"depthy.isReady() && depthy.movearoundShow\" ng-click=\"depthy.movearoundShow = false\"><p>Move your {{Modernizr.devicemotion && Modernizr.mobile ? 'device' : 'cursor'}} around to see the effect</p></div><div class=\"panel panel-danger\" ng-include=\"(Modernizr.webgl && !depthy.isLoading() && !depthy.hasImage()) ? 'views/alert-noimage.html' : null\"></div><div class=\"panel panel-warning\" ng-include=\"(Modernizr.webgl && !depthy.isLoading() && depthy.hasImage() && !depthy.hasDepthmap()) ? 'views/alert-nodepth.html' : null\"></div></div><div class=depthy-viewer depthy-viewer=depthy.viewer ng-click=depthy.zenModeToggle() ng-swipe-right=depthy.leftpaneOpen()><canvas></canvas><div class=\"icon icon-loading\"></div></div><div class=buttons-options ng-show=!depthy.activePopup><div class=btn-group><button class=\"btn btn-default btn-control\" ng-click=shareOptions() ng-disabled=\"!depthy.hasCompleteImage() || !depthy.isReady()\" title=Share><i class=\"icon icon-share\"></i></button> <button class=\"btn btn-default btn-control\" ng-click=imageOptions() ng-disabled=\"!depthy.hasCompleteImage() || !depthy.isReady()\" title=Options ga><i class=\"icon icon-settings\"></i></button> <button class=\"btn btn-default btn-control\" ng-click=imageInfo() ng-disabled=\"!Modernizr.webgl || !depthy.hasImage() || depthy.isLoading()\" title=Info ga><i class=\"icon icon-image\"></i></button> <button class=\"btn btn-default btn-control\" ng-click=drawDepthmap() ng-disabled=\"!Modernizr.webgl || !depthy.hasImage() || depthy.isLoading()\" title=Paint ga><i class=\"icon icon-draw\"></i></button></div></div></section><span ng-include=\"depthy.drawMode ? 'views/draw.html' : null\"></span><section id=popup><div class=\"popup options-popup\" ng-show=\"depthy.activePopup.state === 'image.options'\" ng-include=\"'views/options-popup.html'\"></div><div class=\"popup export-popup\" ng-include=\"depthy.activePopup.state === 'export.gif.options' ? 'views/export-gif-popup.html' : null\"></div><div class=\"popup export-popup\" ng-include=\"depthy.activePopup.state === 'export.webm.options' ? 'views/export-webm-popup.html' : null\"></div><div class=\"popup share-popup\" ng-show=\"depthy.activePopup.state === 'share.options'\" ng-include=\"'views/share-popup.html'\"></div></section></div>"
   );
 
 
@@ -3114,7 +3114,7 @@ angular.module('depthyApp').run(['$templateCache', function($templateCache) {
   'use strict';
 
   $templateCache.put('images/logo.svg',
-    "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"28.8 178.8 440.5 139.8\" enable-background=\"new 28.8 178.8 440.5 139.8\"><g fill=\"#E5E5E4\"><path d=\"M134.8 249.2c0 4.3-.7 8.2-2 11.7s-3.3 6.5-5.8 9.1c-2.5 2.5-5.5 4.5-8.9 5.8-3.5 1.4-7.3 2.1-11.5 2.1H85v-57.5h21.5c4.2 0 8.1.7 11.5 2.1 3.5 1.4 6.5 3.3 8.9 5.9s4.4 5.6 5.8 9.1 2.1 7.4 2.1 11.7zm-8 0c0-3.5-.5-6.7-1.4-9.5-1-2.8-2.3-5.1-4.1-7.1s-3.9-3.4-6.4-4.4c-2.5-1-5.3-1.5-8.4-1.5H92.8v44.9h13.7c3.1 0 5.9-.5 8.4-1.5s4.7-2.5 6.4-4.4 3.1-4.3 4.1-7 1.4-6 1.4-9.5z\"/><path d=\"M185.5 220.4v6.3h-27.6v19.1h22.3v6.1h-22.3v19.6h27.6v6.3h-35.4v-57.5h35.4z\"/><path d=\"M210 256.4v21.5h-7.7v-57.5h17c3.6 0 6.8.4 9.5 1.3 2.7.8 4.9 2 6.7 3.6 1.8 1.6 3.1 3.4 3.9 5.6.9 2.2 1.3 4.6 1.3 7.3s-.5 5.1-1.4 7.3c-.9 2.2-2.3 4.1-4.1 5.7-1.8 1.6-4 2.9-6.7 3.7-2.7.9-5.7 1.3-9.2 1.3H210zm0-6.2h9.2c2.2 0 4.2-.3 5.9-.9 1.7-.6 3.1-1.4 4.3-2.5 1.1-1.1 2-2.3 2.6-3.8.6-1.5.9-3.1.9-4.9 0-3.7-1.1-6.5-3.4-8.6-2.3-2.1-5.7-3.1-10.2-3.1H210v23.8z\"/><path d=\"M294.3 220.4v6.5h-18.6v50.9h-7.8V227h-18.6v-6.5h45z\"/><path d=\"M353.8 277.9H346v-26.1h-31v26.1h-7.8v-57.5h7.8V246h31v-25.6h7.8v57.5z\"/><path d=\"M394.7 255v22.9H387V255l-21.1-34.6h6.8c.7 0 1.2.2 1.6.5.4.3.7.8 1 1.3l13.2 22.3c.5.9 1 1.8 1.3 2.6.4.8.7 1.6 1 2.4.3-.8.6-1.7 1-2.5.3-.8.8-1.7 1.3-2.6l13.1-22.3c.2-.4.6-.8 1-1.2.4-.4 1-.6 1.6-.6h6.9l-21 34.7z\"/></g><path fill=\"#E5E5E4\" d=\"M444 204v90H54v-90h390m5-5H49v100h400V199z\"/><path fill=\"#E6E7E8\" d=\"M444.5 183.8V204h19.8v109.7H33.8V183.8h410.7m5-5H28.8v139.8h440.5V199h-19.8v-20.2z\"/></svg>"
+    "<svg xmlns=\"https://www.w3.org/2000/svg\" viewBox=\"28.8 178.8 440.5 139.8\" enable-background=\"new 28.8 178.8 440.5 139.8\"><g fill=\"#E5E5E4\"><path d=\"M134.8 249.2c0 4.3-.7 8.2-2 11.7s-3.3 6.5-5.8 9.1c-2.5 2.5-5.5 4.5-8.9 5.8-3.5 1.4-7.3 2.1-11.5 2.1H85v-57.5h21.5c4.2 0 8.1.7 11.5 2.1 3.5 1.4 6.5 3.3 8.9 5.9s4.4 5.6 5.8 9.1 2.1 7.4 2.1 11.7zm-8 0c0-3.5-.5-6.7-1.4-9.5-1-2.8-2.3-5.1-4.1-7.1s-3.9-3.4-6.4-4.4c-2.5-1-5.3-1.5-8.4-1.5H92.8v44.9h13.7c3.1 0 5.9-.5 8.4-1.5s4.7-2.5 6.4-4.4 3.1-4.3 4.1-7 1.4-6 1.4-9.5z\"/><path d=\"M185.5 220.4v6.3h-27.6v19.1h22.3v6.1h-22.3v19.6h27.6v6.3h-35.4v-57.5h35.4z\"/><path d=\"M210 256.4v21.5h-7.7v-57.5h17c3.6 0 6.8.4 9.5 1.3 2.7.8 4.9 2 6.7 3.6 1.8 1.6 3.1 3.4 3.9 5.6.9 2.2 1.3 4.6 1.3 7.3s-.5 5.1-1.4 7.3c-.9 2.2-2.3 4.1-4.1 5.7-1.8 1.6-4 2.9-6.7 3.7-2.7.9-5.7 1.3-9.2 1.3H210zm0-6.2h9.2c2.2 0 4.2-.3 5.9-.9 1.7-.6 3.1-1.4 4.3-2.5 1.1-1.1 2-2.3 2.6-3.8.6-1.5.9-3.1.9-4.9 0-3.7-1.1-6.5-3.4-8.6-2.3-2.1-5.7-3.1-10.2-3.1H210v23.8z\"/><path d=\"M294.3 220.4v6.5h-18.6v50.9h-7.8V227h-18.6v-6.5h45z\"/><path d=\"M353.8 277.9H346v-26.1h-31v26.1h-7.8v-57.5h7.8V246h31v-25.6h7.8v57.5z\"/><path d=\"M394.7 255v22.9H387V255l-21.1-34.6h6.8c.7 0 1.2.2 1.6.5.4.3.7.8 1 1.3l13.2 22.3c.5.9 1 1.8 1.3 2.6.4.8.7 1.6 1 2.4.3-.8.6-1.7 1-2.5.3-.8.8-1.7 1.3-2.6l13.1-22.3c.2-.4.6-.8 1-1.2.4-.4 1-.6 1.6-.6h6.9l-21 34.7z\"/></g><path fill=\"#E5E5E4\" d=\"M444 204v90H54v-90h390m5-5H49v100h400V199z\"/><path fill=\"#E6E7E8\" d=\"M444.5 183.8V204h19.8v109.7H33.8V183.8h410.7m5-5H28.8v139.8h440.5V199h-19.8v-20.2z\"/></svg>"
   );
 
 }]);
@@ -3193,7 +3193,7 @@ angular.module('depthyApp')
           type: 'base64',
           name: depthy.opened.title,
           title: depthy.opened.title + ' #depthy',
-          description: 'Created using http://depthy.me'
+          description: 'Created using https://depthy.me'
         },
         xhr: function() {
           var xhr = new window.XMLHttpRequest();
@@ -3365,7 +3365,7 @@ angular.module('depthyApp')
         type: 'base64',
         name: $scope.image.title,
         title: $scope.image.title + ' #depthy',
-        description: 'View this image in 3D on http://depthy.me'
+        description: 'View this image in 3D on https://depthy.me'
       },
       xhr: function() {
         var xhr = new window.XMLHttpRequest();
@@ -3578,7 +3578,7 @@ angular.module('depthyApp')
 /*
 MIT Licensed
 
-Copyright (c) 2014 Rafał Lindemann. http://panrafal.github.com/depthy
+Copyright (c) 2014 Rafał Lindemann. https://panrafal.github.com/depthy
 */
 (function(root){
   'use strict';
@@ -4697,7 +4697,7 @@ Copyright (c) 2014 Rafał Lindemann. http://panrafal.github.com/depthy
 /*
 MIT Licensed
 
-Copyright (c) 2014 Rafał Lindemann. http://panrafal.github.com/depthy
+Copyright (c) 2014 Rafał Lindemann. https://panrafal.github.com/depthy
 */
 (function(root){
   'use strict';

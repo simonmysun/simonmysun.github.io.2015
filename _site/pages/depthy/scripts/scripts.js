@@ -19,7 +19,7 @@ readyFn.push(function() {
     if(footerPrepended) {
         return 1;
     }
-    $('.footer-itself').html('Using <a href="http://depthy.me">Depthy</a>. ');
+    $('.footer-itself').html('Using <a href="https://depthy.me">Depthy</a>. ');
     footerPrepended = true;
     return 1;
 });
