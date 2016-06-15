@@ -2,7 +2,7 @@ url:              https://i.makelove.expert
 baseurl:          
 
 markdown:         kramdown
-highlighter:      pygments
+highlighter:      rouge
 paginate:         4
 
 title:            MY Sun
